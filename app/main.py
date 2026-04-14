@@ -1,5 +1,11 @@
+class AnimalList(list):
+    def __str__(self) -> str:
+        repr_instances = [repr(item) for item in self]
+        return f"[{', '.join(repr_instances)}]"
+
+
 class Animal:
-    alive: list["Animal"] = []
+    alive: AnimalList["Animal"] = AnimalList([])
 
     def __init__(
             self,
